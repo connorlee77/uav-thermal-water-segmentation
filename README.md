@@ -40,7 +40,7 @@ roscore
 
 2. Start the segmentation node. This takes a few seconds to initialize (loading pretrained weights, warming up network for training, etc...) so do it first. See command line arguments in [`segmentation/online_segmentation.py`](segmentation/online_segmentation.py) for more details on modifying training configurations.
 ```
-python segmentation/online_segmentation.py --supervision-mode texture --postprocess --adapt
+python segmentation/online_segmentation.py --use-texture --postprocess --adapt
 ```
 
 3. Start the pseudolabeling node.
@@ -59,7 +59,7 @@ python startup/sync_thermal_imu.py --rotate-180
 
 5. Play the rosbag file
 ```
-rosbag play xxxxx.bag
+rosbag play path/to/bagfile.bag
 ```
 
 ## Datasets
@@ -68,7 +68,7 @@ rosbag play xxxxx.bag
 The segmentation network used in this work was pretrained on RGB images from [COCO-Stuff](https://github.com/nightrome/cocostuff), [ADE20k](https://groups.csail.mit.edu/vision/datasets/ADE20K/), [Fuentes river dataset](https://zenodo.org/record/1003085#.Y_HqPnbMK3A) that contained water-related pixels. We supplemented with images scraped from Flickr via water- and aerial-related search terms and labeled them using an ADE20k-pretrained `ResNet50dilated + PPM_deepsup` convolutional neural network from the [`semantic-segmentation-pytorch`](https://github.com/CSAILVision/semantic-segmentation-pytorch) library. The set of scraped Flickr images with their annotations are made available below. 
 
 | Dataset | Num. Train | Num. Validation | Water-related indices | Link |
-|:---:|:---:|:---:|:---:|
+|:---:|:---:|:---:|:---:|:---:|
 |COCO-Stuff| 10977 | 458 | 148, 155, 178, 179 | [Link to download](https://github.com/nightrome/cocostuff) |
 | ADE20K| 1743 | 163 | 22, 27, 61, 114, 129  | [Link to download](https://groups.csail.mit.edu/vision/datasets/ADE20K/) |
 | Fuentes River | 300 | 0 | --- | [Link to download](https://zenodo.org/record/1003085#.Y_HqPnbMK3A) |
@@ -78,9 +78,9 @@ The segmentation network used in this work was pretrained on RGB images from [CO
 The sky segmentation network was trained on publicly-available thermal images containing sky pixels. The datasets are listed below:
 
 | Dataset | Link |
-|:---:|:---:|:---:|:---:|
+| :---: | :---: |
 | KAIST Pedestrian Segmentation| [Link to download](https://github.com/yeong5366/MS-UDA) |
-| SODA | [Link to download](https://drive.google.com/drive/folders/1ZF2vDk9j69kP5U0zcp-liOBk-atWcw-5) |
+| SODA | [Link to download](http://chenglongli.cn/code-dataset/) |
 | MassMIND | [Link to download](https://github.com/uml-marine-robotics/MassMIND) |
 | FLIR | [TODO]() |
 
@@ -92,15 +92,11 @@ Link: TODO
 ### ROS bagfiles
 | Location | Sequence Name | Link |
 | :---: | :---: | :--- |
-| Kentucky River | flight 2-1 | |
-| Colorado River | flight 1 | |
-| Colorado River | flight 2 | |
-| Colorado River | flight 3 | |
-| Colorado River | flight 4 | |
-| Castaic Lake | flight 1 | |
-| Castaic Lake | flight 2 | |
-| Castaic Lake | flight 3 | |
-| Castaic Lake | flight 4 | |
+| Kentucky River | flight 2-1 | TODO |
+| Colorado River | flight 1 | TODO |
+| Colorado River | flight 3 | TODO |
+| Castaic Lake | flight 2 | TODO |
+| Castaic Lake | flight 4 | TODO |
 
 ## Nvidia Jetson Tips/Bugs
 - Place ROS python imports after everything else has been imported. It seems to have conflicts with `skimage` specifically on the Jetson. 
