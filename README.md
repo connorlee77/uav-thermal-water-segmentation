@@ -5,8 +5,7 @@
 <img src="https://user-images.githubusercontent.com/6981697/219913056-6a8d9ec0-4545-49e0-a88e-3b451f90c7fc.gif" height=250px float=left>
 <img src="https://user-images.githubusercontent.com/6981697/219938622-dda7f8b5-9f07-4ade-9347-b51ced380884.gif" height=250px float=left>
 </p>
-
-This repository contains code necessary to run an online river segmentation algorithm onboard a low-flying UAV. The ROS nodes were written for and tested on an Nvidia Jetson AGX Orin. It also contains all datasets used for training and validation in our paper.
+This repository contains code necessary to run our online self-supervised river segmentation algorithm onboard a low-flying UAV. The ROS nodes were written for and tested on an Nvidia Jetson AGX Orin. It also contains all datasets used for training and validation in our paper.
 
 ## Getting started
 This package subscribes to the following topics:
@@ -32,7 +31,10 @@ If running on custom UAV platform, please modify:
 1. Install `ros-noetic` via `robostack` or source. I recommend `robostack`. 
 2. Install all requirements via `mamba/conda/pip`. No building from source required here. 
 
-## Running on the algorithm
+## Running on the online self-supervised algorithm
+![flowchart](https://user-images.githubusercontent.com/6981697/223039939-d699cb30-0671-4349-8136-90543a037f7f.png)
+
+
 1. Start the ROS master node.
 ```
 roscore
@@ -43,24 +45,30 @@ roscore
 python segmentation/online_segmentation.py --use-texture --postprocess --adapt
 ```
 
-3. Start the pseudolabeling node.
+3. Start the pseudolabeling node (texture cue in example, but use motion cue if desired).
 ```
 python pseudolabel/texture_cue.py
 ```
 
 4. Start the node to preprocess data and perform horizon line estimation.
 ```
-python startup/sync_thermal_imu.py 
-```
-or, if camera oriented upside down on UAV:
-```
+python startup/sync_thermal_imu.py
+
+# or, if camera oriented upside down on UAV:
 python startup/sync_thermal_imu.py --rotate-180
+
+# Start the sky segmentation node if no IMU is available for horizon line estimation.
+python sky_segmentation/segmentation.py --weights-path weights/fast_scnn.onnx
 ```
 
 5. Play the rosbag file
 ```
 rosbag play path/to/bagfile.bag
 ```
+
+<p align=center>
+<img src="https://user-images.githubusercontent.com/6981697/223040935-404cc49a-9789-4a14-a7f4-ae2a26532642.png" height=300px>
+</p>
 
 ## Datasets
 
@@ -86,6 +94,7 @@ The sky segmentation network was trained on publicly-available thermal images co
 
 ### Annotated river/coastal scenes
 The set of annotated images used for online segmentation validation contains N annotated images pulled from the Kentucky River, KY; Colorado River, CA; Castaic Lake, CA; and Duck Pier, NC sequences. 
+![dataset](https://user-images.githubusercontent.com/6981697/223042570-b368398c-9e5b-420c-92c3-9628550206d7.png)
 
 Link: TODO
 
