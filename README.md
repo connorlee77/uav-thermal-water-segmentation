@@ -1,11 +1,15 @@
 # Online Self-Supervised Thermal River Segmentation
 
+<div align=center>
+<a href="https://youtu.be/3O3cbZhjtoQ" target=blank>
+  <img src=https://user-images.githubusercontent.com/6981697/223406729-fbac5e29-430e-42b1-844e-6b1c1b72b662.png width=1080 />
+</a>
+</div>
 
-<p float="left">
-<img src="https://user-images.githubusercontent.com/6981697/219913056-6a8d9ec0-4545-49e0-a88e-3b451f90c7fc.gif" height=250px float=left>
-<img src="https://user-images.githubusercontent.com/6981697/219938622-dda7f8b5-9f07-4ade-9347-b51ced380884.gif" height=250px float=left>
-</p>
+<br>
+
 This repository contains code necessary to run our online self-supervised river segmentation algorithm onboard a low-flying UAV. The ROS nodes were written for and tested on an Nvidia Jetson AGX Orin. It also contains all datasets used for training and validation in our paper.
+
 
 ## Getting started
 This package subscribes to the following topics:
