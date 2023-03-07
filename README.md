@@ -2,7 +2,7 @@
 
 <div align=center>
 <a href="https://youtu.be/3O3cbZhjtoQ" target="_blank">
-  <img src=https://user-images.githubusercontent.com/6981697/223406729-fbac5e29-430e-42b1-844e-6b1c1b72b662.png width=1080 />
+  <img src=https://user-images.githubusercontent.com/6981697/223406729-fbac5e29-430e-42b1-844e-6b1c1b72b662.png width=90% />
 </a>
 </div>
 
