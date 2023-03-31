@@ -84,7 +84,7 @@ The segmentation network used in this work was pretrained on RGB images from [CO
 |COCO-Stuff| 10977 | 458 | 148, 155, 178, 179 | [Link to download](https://github.com/nightrome/cocostuff) |
 | ADE20K| 1743 | 163 | 22, 27, 61, 114, 129  | [Link to download](https://groups.csail.mit.edu/vision/datasets/ADE20K/) |
 | Fuentes River | 300 | 0 | --- | [Link to download](https://zenodo.org/record/1003085#.Y_HqPnbMK3A) |
-| Flickr | 1220 | 0 | --- | [TODO]() |
+| Flickr | 1220 | 0 | --- | [Link to download](https://caltech.box.com/s/wc7ry7fnjji4zrnee0ujjnisz4apfapq) |
 
 ### Sky segmentation network training datasets
 The sky segmentation network was trained on publicly-available thermal images containing sky pixels. The datasets are listed below:
@@ -94,7 +94,7 @@ The sky segmentation network was trained on publicly-available thermal images co
 | KAIST Pedestrian Segmentation| [Link to download](https://github.com/yeong5366/MS-UDA) |
 | SODA | [Link to download](http://chenglongli.cn/code-dataset/) |
 | MassMIND | [Link to download](https://github.com/uml-marine-robotics/MassMIND) |
-| FLIR | [TODO]() |
+| FLIR | [Link to download](https://caltech.box.com/s/bdkzzm92y6y0k0xkwsllhwi8so0p9hyl) |
 
 ### Annotated river/coastal scenes
 The set of annotated images used for online segmentation validation contains N annotated images pulled from the Kentucky River, KY; Colorado River, CA; Castaic Lake, CA; and Duck Pier, NC sequences. 
@@ -105,9 +105,9 @@ Link: TODO
 ### ROS bagfiles
 | Location | Sequence Name | Link |
 | :---: | :---: | :--- |
-| Kentucky River | flight 2-1 | TODO |
-| Colorado River | flight 1 | TODO |
-| Colorado River | flight 3 | TODO |
+| Kentucky River | flight 2-1 | [Link](https://caltech.box.com/s/nbj0kt4gf1wmi9hx6f3awo7k38agvs6e) |
+| Colorado River | flight 1 | [Link](https://caltech.box.com/s/j48tosuvyri4geeyrt9hon4eajafogvh) |
+| Colorado River | flight 3 | [Link](https://caltech.box.com/s/cubsccov4km60lemb9xeit3rn6t1fn3n) |
 | Castaic Lake | flight 2 | TODO |
 | Castaic Lake | flight 4 | TODO |
 
