@@ -100,8 +100,6 @@ The sky segmentation network was trained on publicly-available thermal images co
 The set of annotated images used for online segmentation validation contains N annotated images pulled from the Kentucky River, KY; Colorado River, CA; Castaic Lake, CA; and Duck Pier, NC sequences. 
 ![dataset](https://user-images.githubusercontent.com/6981697/223042570-b368398c-9e5b-420c-92c3-9628550206d7.png)
 
-Link: TODO
-
 ### ROS bagfiles
 | Location | Sequence Name | Link |
 | :---: | :---: | :--- |
