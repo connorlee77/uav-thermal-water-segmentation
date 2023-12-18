@@ -110,4 +110,17 @@ The set of annotated images used for online segmentation validation contains N a
 | Castaic Lake | flight 4 | TODO |
 
 ## Nvidia Jetson Tips/Bugs
-- Place ROS python imports after everything else has been imported. It seems to have conflicts with `skimage` specifically on the Jetson. 
+- Place ROS python imports after everything else has been imported. It seems to have conflicts with `skimage` specifically on the Jetson.
+
+## Citation
+```
+@INPROCEEDINGS{10342016,
+  author={Lee, Connor and Frennert, Jonathan Gustafsson and Gan, Lu and Anderson, Matthew and Chung, Soon-Jo},
+  booktitle={2023 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}, 
+  title={Online Self-Supervised Thermal Water Segmentation for Aerial Vehicles}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={7734-7741},
+  doi={10.1109/IROS55552.2023.10342016}}
+```
